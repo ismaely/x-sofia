@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>X-SOFIA</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="{% static '/img/favicon.ico' %}" type="image/x-icon" />
+
+    <link rel="stylesheet" href="{% static '/plugins/bootstrap/dist/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/fontawesome-free/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/icon-kit/dist/css/iconkit.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/ionicons/dist/css/ionicons.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/perfect-scrollbar/css/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/jvectormap/jquery-jvectormap.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/weather-icons/css/weather-icons.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/c3/c3.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/owl.carousel/dist/assets/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/plugins/owl.carousel/dist/assets/owl.theme.default.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/dist/css/theme.min.css' %}" />
+    <script src="{% static '/src/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+  </head>
+
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div class="wrapper">
+      <header class="header-top" header-theme="light">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-between">
+            <div class="top-menu d-flex align-items-center">
+              <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
+              <div class="header-search">
+                <div class="input-group">
+                  <span class="input-group-addon search-close"><i class="ik ik-x"></i></span>
+                  <input type="text" class="form-control" />
+                  <span class="input-group-addon search-btn"><i class="ik ik-search"></i></span>
+                </div>
+              </div>
+              <button type="button" id="navbar-fullscreen" class="nav-link"><i class="ik ik-maximize"></i></button>
+            </div>
+            <div class="top-menu d-flex align-items-center">
+              <div class="dropdown">
+                <a class="dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  ><img class="avatar" src="img/user.jpg" alt=""
+                /></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                  <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i> Profile</a>
+                  <a class="dropdown-item" href="#"><i class="ik ik-settings dropdown-icon"></i> Settings</a>
+                  <a class="dropdown-item" href="#"
+                    ><span class="float-right"><span class="badge badge-primary">6</span></span
+                    ><i class="ik ik-mail dropdown-icon"></i> Inbox</a
+                  >
+                  <a class="dropdown-item" href="#"><i class="ik ik-navigation dropdown-icon"></i> Message</a>
+                  <a class="dropdown-item" href="login.html"><i class="ik ik-power dropdown-icon"></i> Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <div class="app-sidebar colored">
+          <div class="sidebar-header">
+            <a class="header-brand" href="index.html">
+              <div class="logo-img">
+                <!-- <img src="src/img/brand-white.svg" class="header-brand-img" alt="lavalite" />-->
+              </div>
+              <span class="text">X-SOFIA <br />Gestão Academica </span>
+            </a>
+            <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
+            <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
+          </div>
+
+          <div class="sidebar-content">
+            <div class="nav-container">
+              <nav id="main-menu-navigation" class="navigation-main">
+                <div class="nav-item active">
+                  <a href="#"><i class="ik ik-bar-chart-2"></i><span>MENU</span></a>
+                </div>
+                <div class="nav-lavel">SECRETARIA</div>
+                <div class="nav-item has-sub">
+                  <a href="javascript:void(0)"><i class="ik ik-layers"></i><span></span> </a>
+                  <div class="submenu-content">
+                    <a href="#" class="menu-item">Inscrição</a>
+                    <a href="#" class="menu-item">Inscrição</a>
+                    <a href="{% url 'disciplina:nova-disciplina' %}" class="menu-item">Adicionar Nova Disciplina</a>
+                    <a href="#" class="menu-item">Listar Disciplinas</a>
+                  </div>
+                </div>
+                <div class="nav-lavel">FINANÇAS</div>
+                <div class="nav-item has-sub">
+                  <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
+                  <div class="submenu-content">
+                    <a href="pages/ui/alerts.html" class="menu-item">Alerts</a>
+                    <a href="pages/ui/badges.html" class="menu-item">Badges</a>
+                    <a href="pages/ui/buttons.html" class="menu-item">Buttons</a>
+                    <a href="pages/ui/navigation.html" class="menu-item">Navigation</a>
+                  </div>
+                </div>
+
+                <div class="nav-lavel">ESTATISTICA</div>
+                <div class="nav-item has-sub">
+                  <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
+                  <div class="submenu-content">
+                    <a href="pages/ui/alerts.html" class="menu-item">Alerts</a>
+                    <a href="pages/ui/badges.html" class="menu-item">Badges</a>
+                    <a href="pages/ui/buttons.html" class="menu-item">Buttons</a>
+                    <a href="pages/ui/navigation.html" class="menu-item">Navigation</a>
+                  </div>
+                </div>
+
+                <div class="nav-lavel">DOCENTE</div>
+                <div class="nav-item has-sub">
+                  <a href="#"><i class="ik ik-edit"></i><span>Forms</span></a>
+                  <div class="submenu-content">
+                    <a href="pages/form-components.html" class="menu-item">Components</a>
+                    <a href="pages/form-addon.html" class="menu-item">Add-On</a>
+                    <a href="pages/form-advance.html" class="menu-item">Advance</a>
+                  </div>
+                </div>
+
+                <div class="nav-lavel">UTILIZADOR</div>
+                <div class="nav-item has-sub">
+                  <a href="#"><i class="ik ik-pie-chart"></i><span>Charts</span> </a>
+                  <div class="submenu-content">
+                    <a href="pages/charts-chartist.html" class="menu-item active">Chartist</a>
+                    <a href="pages/charts-flot.html" class="menu-item">Flot</a>
+                    <a href="pages/charts-knob.html" class="menu-item">Knob</a>
+                    <a href="pages/charts-amcharts.html" class="menu-item">Amcharts</a>
+                  </div>
+                </div>
+
+                <div class="nav-lavel">CONFIGURAÇÃO</div>
+
+                <div class="nav-item has-sub">
+                  <a href="#"><i class="ik ik-lock"></i><span>Authentication</span></a>
+                  <div class="submenu-content">
+                    <a href="pages/login.html" class="menu-item">Login</a>
+                    <a href="pages/register.html" class="menu-item">Register</a>
+                    <a href="pages/forgot-password.html" class="menu-item">Forgot Password</a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <!--<div id="visitfromworld" style="width: 100%; height: 350px"></div>-->
+                {% block corpo %} centro {% endblock %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="w-100 clearfix">
+            <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 ThemeKit v2.0. All Rights Reserved.</span>
+            <span class="float-none float-sm-right mt-1 mt-sm-0 text-center"
+              >Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://lavalite.org/" class="text-dark" target="_blank">Lavalite</a></span
+            >
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="{% static '/src/js/vendor/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/plugins/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static '/plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static '/plugins/screenfull/dist/screenfull.js' %}"></script>
+    <script src="{% static '/plugins/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static '/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static '/plugins/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static '/plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static '/plugins/jvectormap/jquery-jvectormap.min.js' %}"></script>
+    <script src="{% static '/plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js' %}"></script>
+    <script src="{% static '/plugins/moment/moment.js' %}"></script>
+    <script src="{% static '/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <script src="{% static '/plugins/d3/dist/d3.min.js' %}"></script>
+    <script src="{% static '/plugins/c3/c3.min.js' %}"></script>
+    <script src="{% static '/js/tables.js' %}"></script>
+    <script src="{% static '/js/widgets.js' %}"></script>
+    <script src="{% static '/js/charts.js' %}"></script>
+    <script src="{% static '/dist/js/theme.min.js' %}"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  </body>
+</html>
