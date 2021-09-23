@@ -94,11 +94,20 @@
                   <a href="javascript:void(0)"><i class="ik ik-layers"></i><span></span> </a>
                   <div class="submenu-content">
                     <a href="#" class="menu-item">Inscrição</a>
-                    <a href="#" class="menu-item">Inscrição</a>
-                    <a href="{% url 'disciplina:nova-disciplina' %}" class="menu-item">Adicionar Nova Disciplina</a>
-                    <a href="#" class="menu-item">Listar Disciplinas</a>
+                    <a href="#" class="menu-item">Matricula</a>
+                    <a href="#" class="menu-item">Confirmação de Matricula</a>
+                    <div class="submenu-content">
+                      <div class="nav-item has-sub">
+                        <a href="javascript:void(0)" class="menu-item">Disciplina</a>
+                        <div class="submenu-content">
+                          <a href="{% url 'disciplina:nova-disciplina' %}" class="menu-item">Adicionar Nova</a>
+                          <a href="#" class="menu-item">Listar</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
                 <div class="nav-lavel">FINANÇAS</div>
                 <div class="nav-item has-sub">
                   <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
