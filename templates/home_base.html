@@ -52,7 +52,7 @@
             <div class="top-menu d-flex align-items-center">
               <div class="dropdown">
                 <a class="dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                  ><img class="avatar" src="img/user.jpg" alt=""
+                  ><img class="avatar" src="{% static 'img/user.jpg' %}" alt=""
                 /></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                   <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i> Profile</a>
@@ -169,9 +169,9 @@
 
         <footer class="footer">
           <div class="w-100 clearfix">
-            <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 ThemeKit v2.0. All Rights Reserved.</span>
+            <span class="text-center text-sm-left d-md-inline-block">Copyright © 2019 X-SOFIA v2.0.</span>
             <span class="float-none float-sm-right mt-1 mt-sm-0 text-center"
-              >Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://lavalite.org/" class="text-dark" target="_blank">Lavalite</a></span
+              >School <i class="fa fa-heart text-danger"></i> by <a href="#" class="text-dark" target="_blank">Life</a></span
             >
           </div>
         </footer>
@@ -197,6 +197,8 @@
     <script src="{% static '/js/widgets.js' %}"></script>
     <script src="{% static '/js/charts.js' %}"></script>
     <script src="{% static '/dist/js/theme.min.js' %}"></script>
+
+    {% load sweetify %} {% sweetify %}
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   </body>
 </html>
