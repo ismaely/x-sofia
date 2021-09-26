@@ -6,12 +6,16 @@ O sistema de gestão acadêmica fornece meios para gerenciar os processos instit
 
 # SECRETARIA
 
+Modulo responsavel pelas operação academicas
+
 # FINANÇAS
+
+Modulo para todo tipo de pagamento
 
 # ESTATISTICAS
 
 # DOCENTE
 
-# DOCENTE
+# EXTRA CURRUCULAR
 
 ........

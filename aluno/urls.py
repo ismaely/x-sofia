@@ -2,8 +2,9 @@
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
+from . import views
 
 app_name = 'aluno'
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('adicionarNovaInscricao/', views.adicionarNovaInscricao, name="adicionar-Inscricao"),
 ]

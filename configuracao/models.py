@@ -1,3 +1,11 @@
+"""
+ * @author [Gunza Ismael]
+ * @email [7ilip@gmail.com]
+ * @create date 2021-09-26 12:54:22
+ * @modify date 2021-09-26 12:54:22
+ * @desc [description]
+ */
+"""
 from django.db import models
 import uuid
 
@@ -71,6 +79,13 @@ class Estado_Civil(models.Model):
 class Genero(models.Model):
     nome = models.CharField(max_length=50)
     sigla = models.CharField(max_length=60, blank=True, null=True, default=" ")
+
+    def __str__(self):
+        return "%s" % (self.nome)
+
+class Resultado_Inscricao(models.Model):
+    nome = models.CharField(max_length=50)
+    descricao = models.CharField(max_length=60, blank=True, null=True, default=" ")
 
     def __str__(self):
         return "%s" % (self.nome)
