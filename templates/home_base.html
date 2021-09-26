@@ -56,12 +56,6 @@
                 /></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                   <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i> Profile</a>
-                  <a class="dropdown-item" href="#"><i class="ik ik-settings dropdown-icon"></i> Settings</a>
-                  <a class="dropdown-item" href="#"
-                    ><span class="float-right"><span class="badge badge-primary">6</span></span
-                    ><i class="ik ik-mail dropdown-icon"></i> Inbox</a
-                  >
-                  <a class="dropdown-item" href="#"><i class="ik ik-navigation dropdown-icon"></i> Message</a>
                   <a class="dropdown-item" href="login.html"><i class="ik ik-power dropdown-icon"></i> Logout</a>
                 </div>
               </div>
@@ -101,7 +95,7 @@
                         <a href="javascript:void(0)" class="menu-item">Disciplina</a>
                         <div class="submenu-content">
                           <a href="{% url 'disciplina:nova-disciplina' %}" class="menu-item">Adicionar Nova</a>
-                          <a href="#" class="menu-item">Listar</a>
+                          <a href="{% url 'disciplina:listar-disciplina' %}" class="menu-item">Listar</a>
                         </div>
                       </div>
                     </div>
@@ -196,15 +190,11 @@
     <script src="{% static '/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
     <script src="{% static '/plugins/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
     <script src="{% static '/plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
-    <script src="{% static '/plugins/jvectormap/jquery-jvectormap.min.js' %}"></script>
-    <script src="{% static '/plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js' %}"></script>
     <script src="{% static '/plugins/moment/moment.js' %}"></script>
-    <script src="{% static '/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js' %}"></script>
     <script src="{% static '/plugins/d3/dist/d3.min.js' %}"></script>
     <script src="{% static '/plugins/c3/c3.min.js' %}"></script>
-    <script src="{% static '/js/tables.js' %}"></script>
+    <script src="{% static '/dist/js/tables.js' %}"></script>
     <script src="{% static '/js/widgets.js' %}"></script>
-    <script src="{% static '/js/charts.js' %}"></script>
     <script src="{% static '/dist/js/theme.min.js' %}"></script>
 
     {% load sweetify %} {% sweetify %}

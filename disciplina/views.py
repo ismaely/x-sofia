@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import sweetify
-from disciplina.forms import DisciplinaForm
+from disciplina.forms import DisciplinaForm, Disciplina
 
 # Create your views here.
 
@@ -19,3 +19,10 @@ def adicionarNovaDisciplina(request):
     context = {'form':form}
     return render (request, 'disciplina/adicionarDisciplina.html', context)
 
+
+
+def listarDisciplina(request):
+    lista =[]
+    lista = Disciplina.objects.all()
+    context = {'lista': lista}
+    return render (request, 'disciplina/listarDisciplina.html', context)
