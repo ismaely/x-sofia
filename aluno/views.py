@@ -8,13 +8,13 @@
 """
 from django.shortcuts import render
 from aluno.models import Aluno, Inscricao
-
+from aluno.forms import Inscricao_Form
 
 # Create your views here.
 
 
 def adicionarNovaInscricao(request):
-    form = DisciplinaForm(request.POST or None)
+    form = Inscricao_Form(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             form.save()

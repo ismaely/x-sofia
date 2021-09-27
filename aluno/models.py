@@ -32,7 +32,7 @@ class Inscricao(models.Model):
     resultado = models.ForeignKey(Resultado_Inscricao, on_delete=models.DO_NOTHING, blank=True, null=True, parent_link=True)
     nota_final = models.CharField(max_length=3, blank=True, null=True, default="")
     instituicao_origem = models.CharField(max_length=120, blank=True, null=True,default="")
-    data_registro = models.CharField(max_length=20)
+    data_inscricao = models.CharField(max_length=20)
     data_create= models.DateField(auto_now=True)
     operador = models.CharField(max_length=190, blank=True, null=True)
 
