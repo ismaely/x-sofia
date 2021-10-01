@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.db.models import Count, Exists, Q
 from pessoa.models import Pessoa
 from aluno.models import Aluno, Inscricao
