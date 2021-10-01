@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sweetify',
     'configuracao',
-    'validates',
+    'validate',
     'curso',
     'disciplina',
     'pessoa',
