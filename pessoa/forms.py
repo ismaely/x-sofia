@@ -5,7 +5,7 @@ from pessoa.models import Pessoa
 
 
 
-class PessoaForm(ModelForm):
+class Pessoa_Form(ModelForm):
     nome = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control '}))
     nome_pai = forms.CharField(max_length=100, required=False,  widget=forms.TextInput(attrs={'class': 'form-control '}))
     nome_mae = forms.CharField(max_length=100, required=False, widget=forms.TextInput(attrs={ 'class': 'form-control '}))

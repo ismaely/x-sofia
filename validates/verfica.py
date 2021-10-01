@@ -8,11 +8,11 @@ def retorna_id(value):
         resp = Pessoa.objects.get(Q(bi=value) | Q(passaporte=value))
         if resp.id:
             return resp.id
-    except Estudante.DoesNotExist:
+    except Pessoa.DoesNotExist:
         try:
-            resp = Estudante.objects.get(numero_estudante=value)
+            resp = Pessoa.objects.get(numero_estudante=value)
             if resp.id:
                 return resp.id
-        except Estudante.DoesNotExist:
+        except Pessoa.DoesNotExist:
             return 0
 

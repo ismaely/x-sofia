@@ -2,7 +2,7 @@
 @author [Gunza Ismael]
 @email [7ilip@gmail.com]
 @create date 2021-09-26 12:33:38
-@modify date 2021-09-26 13:29:21
+@modify date 2021-09-30 13:35:12
 @desc [description]
 -->
 
@@ -16,7 +16,6 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <link rel="icon" href="{% static '/img/favicon.ico' %}" type="image/x-icon" />
 
     <link rel="stylesheet" href="{% static '/plugins/bootstrap/dist/css/bootstrap.min.css' %}" />
@@ -32,6 +31,7 @@
     <link rel="stylesheet" href="{% static '/plugins/owl.carousel/dist/assets/owl.carousel.min.css' %}" />
     <link rel="stylesheet" href="{% static '/plugins/owl.carousel/dist/assets/owl.theme.default.min.css' %}" />
     <link rel="stylesheet" href="{% static '/dist/css/theme.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/dist/css/wizard.css' %}" />
     <script src="{% static '/src/js/vendor/modernizr-2.8.3.min.js' %}"></script>
   </head>
 
@@ -204,8 +204,39 @@
     <script src="{% static '/dist/js/tables.js' %}"></script>
     <script src="{% static '/js/widgets.js' %}"></script>
     <script src="{% static '/dist/js/theme.min.js' %}"></script>
+    <script>
+      $(document).ready(function () {
+        //Initialize tooltips
+        $(".nav-tabs > li a[title]").tooltip();
+
+        //Wizard
+        $('a[data-toggle="tab"]').on("show.bs.tab", function (e) {
+          var $target = $(e.target);
+
+          if ($target.parent().hasClass("disabled")) {
+            return false;
+          }
+        });
+
+        $(".next-step").click(function (e) {
+          var $active = $(".wizard .nav-tabs li.active");
+          $active.next().removeClass("disabled");
+          nextTab($active);
+        });
+        $(".prev-step").click(function (e) {
+          var $active = $(".wizard .nav-tabs li.active");
+          prevTab($active);
+        });
+      });
+
+      function nextTab(elem) {
+        $(elem).next().find('a[data-toggle="tab"]').click();
+      }
+      function prevTab(elem) {
+        $(elem).prev().find('a[data-toggle="tab"]').click();
+      }
+    </script>
 
     {% load sweetify %} {% sweetify %}
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   </body>
 </html>

@@ -8,13 +8,17 @@
 """
 from django.shortcuts import render
 from aluno.models import Aluno, Inscricao
+from pessoa.forms import Pessoa_Form
 from aluno.forms import Inscricao_Form
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+import json, sweetify
 
-# Create your views here.
 
 
 def adicionarNovaInscricao(request):
-    form = Inscricao_Form(request.POST or None)
+    form = Pessoa_Form(request.POST or None)
+    form2 = Inscricao_Form(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -22,6 +26,6 @@ def adicionarNovaInscricao(request):
 
             return HttpResponseRedirect(reverse('home:home'))
 
-    context = {'form':form}
+    context = {'form':form,'form2':form2}
     return render (request, 'aluno/adicionarInscricao.html', context)
 

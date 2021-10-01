@@ -19,6 +19,7 @@ class Pessoa(models.Model):
     municipio = models.ForeignKey(Municipio, on_delete=models.SET_NULL, parent_link=True,  blank=True, null=True, default="")
     nacionalidade = models.ForeignKey(Pais, on_delete=models.CASCADE, parent_link=True, default=6)
     data_create= models.DateField(auto_now=True)
+    foto = models.FileField(upload_to='uploads/fotos/% Y/', blank=True, null=True)
 
     def __str__(self):
         return self.id
