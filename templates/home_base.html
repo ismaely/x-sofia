@@ -2,7 +2,7 @@
 @author [Gunza Ismael]
 @email [7ilip@gmail.com]
 @create date 2021-09-26 12:33:38
-@modify date 2021-09-30 13:35:12
+@modify date 2021-10-11 12:32:51
 @desc [description]
 -->
 
@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="{% static '/plugins/ionicons/dist/css/ionicons.min.css' %}" />
     <link rel="stylesheet" href="{% static '/plugins/perfect-scrollbar/css/perfect-scrollbar.css' %}" />
     <link rel="stylesheet" href="{% static '/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" />
-    <link rel="stylesheet" href="{% static '/plugins/jvectormap/jquery-jvectormap.css' %}" />
     <link rel="stylesheet" href="{% static '/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css' %}" />
     <link rel="stylesheet" href="{% static '/plugins/weather-icons/css/weather-icons.min.css' %}" />
     <link rel="stylesheet" href="{% static '/plugins/c3/c3.min.css' %}" />
@@ -182,7 +181,7 @@
           <div class="w-100 clearfix">
             <span class="text-center text-sm-left d-md-inline-block">Copyright © 2019 X-SOFIA v2.0.</span>
             <span class="float-none float-sm-right mt-1 mt-sm-0 text-center"
-              >School <i class="fa fa-heart text-danger"></i> by <a href="#" class="text-dark" target="_blank">Life</a></span
+              >School <i class="fa fa-heart text-danger"></i> <a href="#" class="text-dark" target="_blank">Life</a></span
             >
           </div>
         </footer>
@@ -192,6 +191,7 @@
     <script src="{% static '/src/js/vendor/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static '/plugins/popper.js/dist/umd/popper.min.js' %}"></script>
     <script src="{% static '/plugins/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
     <script src="{% static '/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js' %}"></script>
     <script src="{% static '/plugins/screenfull/dist/screenfull.js' %}"></script>
     <script src="{% static '/plugins/datatables.net/js/jquery.dataTables.min.js' %}"></script>
@@ -202,40 +202,9 @@
     <script src="{% static '/plugins/d3/dist/d3.min.js' %}"></script>
     <script src="{% static '/plugins/c3/c3.min.js' %}"></script>
     <script src="{% static '/dist/js/tables.js' %}"></script>
-    <script src="{% static '/js/widgets.js' %}"></script>
+    <script src="{% static 'dist/js/widgets.js' %}"></script>
+    <script src="{% static '/dist/js/wizerd.js' %}"></script>
     <script src="{% static '/dist/js/theme.min.js' %}"></script>
-    <script>
-      $(document).ready(function () {
-        //Initialize tooltips
-        $(".nav-tabs > li a[title]").tooltip();
-
-        //Wizard
-        $('a[data-toggle="tab"]').on("show.bs.tab", function (e) {
-          var $target = $(e.target);
-
-          if ($target.parent().hasClass("disabled")) {
-            return false;
-          }
-        });
-
-        $(".next-step").click(function (e) {
-          var $active = $(".wizard .nav-tabs li.active");
-          $active.next().removeClass("disabled");
-          nextTab($active);
-        });
-        $(".prev-step").click(function (e) {
-          var $active = $(".wizard .nav-tabs li.active");
-          prevTab($active);
-        });
-      });
-
-      function nextTab(elem) {
-        $(elem).next().find('a[data-toggle="tab"]').click();
-      }
-      function prevTab(elem) {
-        $(elem).prev().find('a[data-toggle="tab"]').click();
-      }
-    </script>
 
     {% load sweetify %} {% sweetify %}
   </body>

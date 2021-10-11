@@ -89,3 +89,11 @@ class Resultado_Inscricao(models.Model):
 
     def __str__(self):
         return "%s" % (self.nome)
+
+class Documento_identificacao(models.Model):
+    nome = models.CharField(max_length=50)
+    sigla = models.CharField(max_length=3, blank=True, null=True, default=" ")
+    descricao = models.CharField(max_length=60, blank=True, null=True, default=" ")
+
+    def __str__(self):
+        return "%s" % (self.nome)

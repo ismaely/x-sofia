@@ -19,6 +19,7 @@ def retorna_id(value):
             return resp.id
     except Pessoa.DoesNotExist:
         try:
+            ## avalisar esta função
             resp = Pessoa.objects.get(numero_estudante=value)
             if resp.id:
                 return resp.id

@@ -2,89 +2,177 @@
 @author [Gunza Ismael]
 @email [7ilip@gmail.com]
 @create date 2021-09-26 13:03:25
-@modify date 2021-09-30 13:47:12
+@modify date 2021-10-11 13:07:22
 @desc [description]
 -->
 {% extends 'home_base.html' %}{% block corpo %}{% load static %}
 <div class="row">
   <div class="col-md-12">
-    <div class="container">
-      <div class="">
-        <section>
-          <div class="wizard">
-            <div class="wizard-inner">
-              <div class="connecting-line"></div>
-
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                  <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                    <span class="round-tab">
-                      <i class="glyphicon glyphicon-folder-open"></i>
-                    </span>
-                  </a>
-                </li>
-
-                <li role="presentation" class="disabled">
-                  <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                    <span class="round-tab">
-                      <i class="glyphicon glyphicon-pencil"></i>
-                    </span>
-                  </a>
-                </li>
-
-                <li role="presentation" class="disabled">
-                  <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                    <span class="round-tab">
-                      <i class="glyphicon glyphicon-picture"></i>
-                    </span>
-                  </a>
-                </li>
-
-                <li role="presentation" class="disabled">
-                  <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                    <span class="round-tab">
-                      <i class="glyphicon glyphicon-ok"></i>
-                    </span>
-                  </a>
-                </li>
-              </ul>
+    <div class="card">
+      <div class="card-header"><h3>Inscrição do Utente</h3></div>
+      <div class="card-body">
+        <form id="regForm" class="forms-sample">
+          {% csrf_token %} {% autoescape on %}
+          <div class="all-steps" id="all-steps"><span class="step"></span> <span class="step"></span> <span class="step"></span> <span class="step"></span></div>
+          <div class="tab">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Nome Completo</label>
+                  {{ form.nome }} {{ form.nome.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Nome do Pai</label>
+                  {{ form.nome_pai }} {{ form.nome_pai.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Nome da Maẽ</label>
+                  {{ form.nome_mae }} {{ form.nome_mae.errors }}
+                </div>
+              </div>
             </div>
 
-            <form role="form">
-              <div class="tab-content">
-                <div class="tab-pane active" role="tabpanel" id="step1">
-                  <h3>Step 1</h3>
-                  <p>This is step 1</p>
-                  <ul class="list-inline pull-right">
-                    <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
-                  </ul>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Documento de Identificação</label>
+                  {{ form.documento }} {{ form.documento.errors }}
                 </div>
-                <div class="tab-pane" role="tabpanel" id="step2">
-                  <h3>Step 2</h3>
-                  <p>This is step 2</p>
-                  <ul class="list-inline pull-right">
-                    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                    <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
-                  </ul>
-                </div>
-                <div class="tab-pane" role="tabpanel" id="step3">
-                  <h3>Step 3</h3>
-                  <p>This is step 3</p>
-                  <ul class="list-inline pull-right">
-                    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                    <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                    <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
-                  </ul>
-                </div>
-                <div class="tab-pane" role="tabpanel" id="complete">
-                  <h3>Complete</h3>
-                  <p>You have successfully completed all steps.</p>
-                </div>
-                <div class="clearfix"></div>
               </div>
-            </form>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Nº Identificação</label>
+                  {{ form.ndi }} {{ form.ndi.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Data de Nascimento</label>
+                  {{ form.data_nascimento }} {{ form.data_nascimento.errors }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Genero</label>
+                  {{ form.genero }} {{ form.genero.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Estado Civil</label>
+                  {{ form.estado_civil }} {{ form.estado_civil.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Nacionalidade</label>
+                  {{ form.nacionalidade}} {{ form.nacionalidade.errors }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Provincia</label>
+                  {{ form.provincia }} {{ form.provincia.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Munícipio</label>
+                  {{ form.municipio }} {{ form.municipio.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Morada / Rua</label>
+                  {{ form.residencia }} {{ form.residencia.errors }}
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
+          <div class="tab">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Telefone</label>
+                  {{ form.telefone }} {{ form.telefone.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">E-mail</label>
+                  {{ form.email }} {{ form.email.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Escola de Provenciença</label>
+                  {{ form2.instituicao_origem }} {{ form2.instituicao_origem.errors }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Habilitação Literaria</label>
+                  {{ form2.habilitacao_literaria }} {{ form.habilitacao_literaria.errors }}
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Ano de Conclusão</label>
+                  {{ form2.instituicao_origem }} {{ form2.instituicao_origem.errors }}
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Media de Conclusão</label>
+                  {{ form2.media_conclusao }} {{ form2.media_conclusao.errors }}
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Curso a Frequentar</label>
+                  {{ form2.curso }} {{ form.curso.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Periodo</label>
+                  {{ form2.periodo }} {{ form2.periodo.errors }}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="exampleInputEmail3">Data</label>
+                  {{ form2.data_inscricao }} {{ form2.data_inscricao.errors }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="overflow: auto" id="nextprevious">
+            <div style="float: right">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> <button type="button" id="nextBtn" onclick="nextPrev(1)">Proximo</button>
+            </div>
+          </div>
+          {% endautoescape %}
+        </form>
       </div>
     </div>
   </div>
