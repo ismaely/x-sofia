@@ -2,7 +2,7 @@
 @author [Gunza Ismael]
 @email [7ilip@gmail.com]
 @create date 2021-09-26 13:03:25
-@modify date 2021-10-12 05:47:49
+@modify date 2021-10-12 08:58:36
 @desc [description]
 -->
 {% extends 'home_base.html' %}{% block corpo %}{% load static %}
@@ -153,7 +153,29 @@
               </div>
             </div>
           </div>
-          <div class="tab">Foto</div>
+          <div class="tab">
+            <div class="col-md-4">
+              <h4>Tira Fotografia</h4>
+              <div class="card">
+                <div class="card-body text-center">
+                  <div class="profile-pic mb-20">
+                    <!--<img src="../img/user.jpg" width="150" class="rounded-circle" alt="user" />-->
+                    <div id="my_camera"></div>
+                  </div>
+                </div>
+                <div class="p-4 border-top mt-15">
+                  <div class="row text-center">
+                    <div class="col-6 border-right">
+                      <a href="#" class="link d-flex align-items-center justify-content-center"> <i class="ik ik-message-square f-20 mr-5"></i>Fazer Foto </a>
+                    </div>
+                    <div class="col-6">
+                      <a href="#" class="link d-flex align-items-center justify-content-center"><i class="ik ik-box f-20 mr-5"></i>Nova Foto</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div style="overflow: auto" id="nextprevious">
             <div style="float: right">
