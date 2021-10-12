@@ -27,5 +27,5 @@ def adicionarNovaInscricao(request):
             return HttpResponseRedirect(reverse('home:home'))
 
     context = {'form':form,'form2':form2}
-    return render (request, 'aluno/adicionarInscricao.html', context)
+    return render (request, 'aluno/reciboInscricao.html', context)
 

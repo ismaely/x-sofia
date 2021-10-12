@@ -1,0 +1,113 @@
+<!--
+@author [Gunza Ismael]
+@email [7ilip@gmail.com]
+@create date 2021-10-12 10:24:31
+@modify date 2021-10-12 10:39:06
+@desc [description]
+-->
+{% extends 'home_base.html' %}{% block corpo %}{% load static %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="d-block w-100">Escola X-Sofia <small class="float-right">Date: 12/11/2018</small></h3>
+  </div>
+  <div class="card-body">
+    <div class="row invoice-info">
+      <div class="col-sm-4 invoice-col">
+        <!--ola-->
+      </div>
+      <div class="col-sm-4 invoice-col">
+        <address>
+          <strong>Recibo de Inscrição</strong>
+        </address>
+      </div>
+      <div class="col-sm-4 invoice-col">
+        <b>Invoice #007612</b><br />
+        <br />
+        <b>Order ID:</b> 4F3S8J<br />
+        <b>Payment Due:</b> 2/22/2014<br />
+        <b>Account:</b> 968-34567
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Serial #</th>
+              <th>Description</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Call of Duty</td>
+              <td>455-981-221</td>
+              <td>El snort testosterone trophy driving gloves handsome</td>
+              <td>$64.50</td>
+            </tr>
+            <tr>
+              <td>Need for Speed IV</td>
+              <td>247-925-726</td>
+              <td>Wes Anderson umami biodiesel</td>
+              <td>$50.00</td>
+            </tr>
+            <tr>
+              <td>Monsters DVD</td>
+              <td>735-845-642</td>
+              <td>Terry Richardson helvetica tousled street art master</td>
+              <td>$10.70</td>
+            </tr>
+            <tr>
+              <td>Grown Ups Blue Ray</td>
+              <td>422-568-642</td>
+              <td>Tousled lomo letterpress</td>
+              <td>$25.99</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <p class="lead">Extra:</p>
+
+        <div class="alert alert-secondary mt-20">
+          <!--obs-->
+        </div>
+      </div>
+      <div class="col-6">
+        <p class="lead">Custo de Pagamentos</p>
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <th style="width: 50%">Subtotal:</th>
+              <td>$250.30</td>
+            </tr>
+            <tr>
+              <th>Tax (9.3%)</th>
+              <td>$10.34</td>
+            </tr>
+            <tr>
+              <th>Shipping:</th>
+              <td>$5.80</td>
+            </tr>
+            <tr>
+              <th>Total:</th>
+              <td>$265.24</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row no-print">
+      <div class="col-12">
+        <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px"><i class="fa fa-download"></i> Imprimir - PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
