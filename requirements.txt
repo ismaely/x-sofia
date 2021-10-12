@@ -10,7 +10,6 @@ dbus-python==1.2.16
 defer==1.0.4
 distlib==0.3.0
 distro==1.4.0
-distro-info===0.10ubuntu1
 Django==3.2.4
 django-filter==2.4.0
 djangorestframework==3.12.4
