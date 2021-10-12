@@ -34,8 +34,8 @@ function nextPrev(n) {
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     if (currentTab >= x.length) {
-        // document.getElementById("regForm").submit();
-        // return false;
+        document.getElementById("regForm").submit();
+        return true;
         //alert("sdf");
         document.getElementById("nextprevious").style.display = "none";
         document.getElementById("all-steps").style.display = "none";

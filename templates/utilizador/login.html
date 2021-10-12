@@ -39,9 +39,14 @@
           <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0">
             <div class="authentication-form mx-auto">
               <div class="logo-centered">
-                <a href=""><img src="{% static '/dist/img/brand.svg' %}" alt="" /><b>X-SOFIA</b></a>
+                <a href=""></a>
+                <!-- <a href=""><img src="{% static '/dist/img/brand.svg' %}" alt="" /><b>X-SOFIA</b></a>-->
               </div>
-              <h3></h3>
+              <h2 class="text-center"> 
+                <b> X-SOFIA</b>
+                <br>
+                Gestão Academica
+              </h2>
               <p></p>
               <form action="{% url 'home:home' %}" method="POST">
                 {% csrf_token %}
@@ -65,11 +70,11 @@
                   </div>
                 </div>
                 <div class="sign-btn text-center">
-                  <button class="btn btn-theme">Sign In</button>
+                  <button class="btn btn-theme">ENTRAR</button>
                 </div>
               </form>
               <div class="register">
-                <p>Don't have an account? <a href="#">Create an account</a></p>
+                <p> <a href="#"></a></p>
               </div>
             </div>
           </div>

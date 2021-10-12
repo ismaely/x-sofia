@@ -1,3 +1,12 @@
+"""
+ * @author [Gunza Ismael]
+ * @email [7ilip@gmail.com]
+ * @create date 2021-10-12 06:00:36
+ * @modify date 2021-10-12 06:00:36
+ * @desc [description]
+ */
+ """
+
 from django.db import models
 from configuracao.models import Pais, Provincia, Municipio, Genero, Estado_Civil, Documento_identificacao
 
@@ -20,5 +29,6 @@ class Pessoa(models.Model):
     data_create= models.DateField(auto_now=True)
     foto = models.FileField(upload_to='uploads/fotos/% Y/', blank=True, null=True)
     documento = models.ForeignKey(Documento_identificacao, on_delete=models.CASCADE, parent_link=True)
+
     def __str__(self):
         return self.id
