@@ -16,9 +16,9 @@ class Inscricao_Form(ModelForm):
         model = Inscricao
         fields = ['curso', 'instituicao_origem', 'periodo', 'data_inscricao', 'operador', 'ano_conclusao','habilitacao_literaria']
         widgets = {
-            'curso': forms.Select(attrs={'class': 'form-control '}),
+            'curso': forms.Select(attrs={'class': 'form-control ajax_curso', 'disabled':'disabled'}),
             'periodo': forms.Select(attrs={'class': 'form-control '}),
-            'habilitacao_literaria': forms.Select(attrs={'class': 'form-control '}),
+            'habilitacao_literaria': forms.Select(attrs={'class': 'form-control ajax_classeFrequencia'}),
             'data_inscricao': forms.DateInput( attrs={'class': 'form-control','type': 'date'}),
         }
 

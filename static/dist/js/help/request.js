@@ -2,12 +2,28 @@
  * @author [Gunza Ismael]
  * @email [7ilip@gmail.com]
  * @create date 2021-10-15 00:59:34
- * @modify date 2021-10-15 10:42:16
+ * @modify date 2021-10-15 12:00:56
  * @desc [description]
  */
 
 $(document).ready(function () {
 
+
+
+    /**
+     * função que vai bloquiar o curso caso a sua classe não seja ensino medio
+     */
+
+    $('.ajax_classeFrequencia').click(function () {
+
+        var classe = $('.ajax_classeFrequencia').val();
+        if (classe < 10) {
+            $(".ajax_curso").attr("disabled", "disabled");
+        } else {
+            $(".ajax_curso").removeAttr("disabled", "disabled");
+
+        }
+    });
 
     /**
      * função que vai retorna todas os os municipios em função do id da provincia
@@ -64,6 +80,9 @@ $(document).ready(function () {
 
 
     });
+
+
+
 
 
 

@@ -2,7 +2,7 @@
 @author [Gunza Ismael]
 @email [7ilip@gmail.com]
 @create date 2021-09-26 13:03:25
-@modify date 2021-10-12 10:09:05
+@modify date 2021-10-15 12:14:52
 @desc [description]
 -->
 {% extends 'home_base.html' %}{% block corpo %}{% load static %}
@@ -18,7 +18,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Nome Completo</label>
+                  <label for="exampleInputEmail3">Nome Completo <span class="text-danger">*</span></label>
                   {{ form.nome }} {{ form.nome.errors }}
                 </div>
               </div>
@@ -39,19 +39,19 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Documento de Identificação</label>
+                  <label for="exampleInputEmail3">Documento de Identificação<span class="text-danger">*</span></label>
                   {{ form.documento }} {{ form.documento.errors }}
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Nº Identificação</label>
+                  <label for="exampleInputEmail3">Nº Identificação <span class="text-danger">*</span></label>
                   {{ form.ndi }} {{ form.ndi.errors }}
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Data de Nascimento</label>
+                  <label for="exampleInputEmail3">Data de Nascimento<span class="text-danger">*</span></label>
                   {{ form.data_nascimento }} {{ form.data_nascimento.errors }}
                 </div>
               </div>
@@ -60,13 +60,13 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Genero</label>
+                  <label for="exampleInputEmail3">Genero<span class="text-danger">*</span></label>
                   {{ form.genero }} {{ form.genero.errors }}
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Estado Civil</label>
+                  <label for="exampleInputEmail3">Estado Civil<span class="text-danger">*</span></label>
                   {{ form.estado_civil }} {{ form.estado_civil.errors }}
                 </div>
               </div>
@@ -81,13 +81,13 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Provincia</label>
+                  <label for="exampleInputEmail3">Provincia<span class="text-danger">*</span></label>
                   {{ form.provincia }} {{ form.provincia.errors }}
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Munícipio</label>
+                  <label for="exampleInputEmail3">Munícipio<span class="text-danger">*</span></label>
                   {{ form.municipio }} {{ form.municipio.errors }}
                 </div>
               </div>
@@ -103,7 +103,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Telefone</label>
+                  <label for="exampleInputEmail3">Telefone<span class="text-danger">*</span></label>
                   {{ form.telefone }} {{ form.telefone.errors }}
                 </div>
               </div>
@@ -124,7 +124,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Classe a Frequentar</label>
+                  <label for="exampleInputEmail3">Classe a Frequentar<span class="text-danger">*</span></label>
                   {{ form2.habilitacao_literaria }} {{ form.habilitacao_literaria.errors }}
                 </div>
               </div>
@@ -138,7 +138,7 @@
 
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Periodo</label>
+                  <label for="exampleInputEmail3">Periodo<span class="text-danger">*</span></label>
                   {{ form2.periodo }} {{ form2.periodo.errors }}
                 </div>
               </div>
@@ -147,7 +147,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="exampleInputEmail3">Data de Inscrição</label>
+                  <label for="exampleInputEmail3">Data de Inscrição<span class="text-danger">*</span></label>
                   {{ form2.data_inscricao }} {{ form2.data_inscricao.errors }}
                 </div>
               </div>
