@@ -14,16 +14,16 @@ class Pessoa_Form(ModelForm):
     residencia = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     telefone = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(max_length=180, required=False, widget=forms.TextInput(attrs={'class': 'form-control', }))
-    municipio = forms.CharField(max_length=60,required=False,  widget=forms.Select(choices="", attrs={'class': 'form-control'}))
+    municipio = forms.CharField(max_length=60,required=False,  widget=forms.Select(choices="", attrs={'class': 'form-control ajax_municipio'}))
     class Meta:
         model = Pessoa
         fields = ['nome', 'nome_pai', 'nome_mae','genero','data_nascimento', 'estado_civil', 'residencia', 'provincia', 'telefone','documento', 'email', 'nacionalidade']
 
         widgets = {
-            'provincia': forms.Select(attrs={'class': 'form-control '}),
+            'provincia': forms.Select(attrs={'class': 'form-control ajax_provincia'}),
             'genero': forms.Select( attrs={'class': 'form-control'}),
             'estado_civil': forms.Select( attrs={'class': 'form-control'}),
             'documento': forms.Select( attrs={'class': 'form-control'}),
             'nacionalidade': forms.Select( attrs={'class': 'form-control '}),
-            'data_nascimento': forms.DateInput( attrs={'class': 'form-control'}),
+            'data_nascimento': forms.DateInput( attrs={'class': 'form-control','type': 'date'}),
         }

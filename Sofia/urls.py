@@ -23,5 +23,6 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('disciplina/', include('disciplina.urls')),
     path('aluno/', include('aluno.urls')),
+    path('ajax/', include('ajax.urls')),
     path('admin/', admin.site.urls),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

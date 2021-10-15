@@ -19,7 +19,7 @@ class Inscricao_Form(ModelForm):
             'curso': forms.Select(attrs={'class': 'form-control '}),
             'periodo': forms.Select(attrs={'class': 'form-control '}),
             'habilitacao_literaria': forms.Select(attrs={'class': 'form-control '}),
-            'data_inscricao': forms.DateInput( attrs={'class': 'form-control'}),
+            'data_inscricao': forms.DateInput( attrs={'class': 'form-control','type': 'date'}),
         }
 
     """def clean_nota_final(self):
