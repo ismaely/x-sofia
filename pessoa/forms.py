@@ -15,9 +15,11 @@ class Pessoa_Form(ModelForm):
     telefone = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(max_length=180, required=False, widget=forms.TextInput(attrs={'class': 'form-control', }))
     municipio = forms.CharField(max_length=60,required=False,  widget=forms.Select(choices="", attrs={'class': 'form-control ajax_municipio'}))
+    foto = forms.CharField(required=False, widget=forms.TextInput(attrs={'type':'hidden', 'class': 'form-control', 'id': 'fotoSalva'}))
     class Meta:
         model = Pessoa
-        fields = ['nome', 'nome_pai', 'nome_mae','genero','data_nascimento', 'estado_civil', 'residencia', 'provincia', 'telefone','documento', 'email', 'nacionalidade']
+        fields = ['nome', 'nome_pai', 'nome_mae','genero','data_nascimento', 'estado_civil', 'residencia', 'provincia', 'telefone',
+        'documento', 'email', 'nacionalidade', 'foto']
 
         widgets = {
             'provincia': forms.Select(attrs={'class': 'form-control ajax_provincia'}),

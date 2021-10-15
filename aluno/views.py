@@ -21,10 +21,13 @@ def adicionarNovaInscricao(request):
     form2 = Inscricao_Form(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
-            form.save()
+            pessoa = form.save()
+            dados = form.save(commit=False)
+            dados.pessoa_id = pessoa.id
             sweetify.success(request, 'Dsciplina registrada com sucesso!....', button='Ok', timer='3100', persistent="Close")
 
-            return HttpResponseRedirect(reverse('home:home'))
+            context = {}
+            return render (request, 'aluno/reciboInscricao.html', context)
 
     context = {'form':form,'form2':form2}
     return render (request, 'aluno/adicionarInscricao.html', context)
