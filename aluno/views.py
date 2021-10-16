@@ -37,7 +37,7 @@ def prepara_foto(request):
 
 
 def adicionarNovaInscricao(request):
-    form = Pessoa_Form(request.POST or None)
+    form = Pessoa_Form(request.POST, request.FILES or None)
     form2 = Inscricao_Form(request.POST or None)
     if request.method == 'POST':
         if form.is_valid() and form2.is_valid():
