@@ -18,7 +18,7 @@ class Pessoa(models.Model):
     nome_mae = models.CharField(max_length=200, blank=True, null=True, default="")
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE, parent_link=True, blank=True, null=True)
     data_nascimento=models.CharField(max_length=20)
-    ndi = models.CharField(max_length=40,  blank=True, null=True, default="")
+    ndi = models.CharField(max_length=40,unique=True)
     estado_civil = models.ForeignKey(Estado_Civil, on_delete=models.CASCADE, parent_link=True, blank=True, null=True)
     residencia = models.CharField(max_length=100, blank=True, null=True)
     telefone = models.CharField(max_length=30, blank=True, null=True, default="")
@@ -27,7 +27,7 @@ class Pessoa(models.Model):
     municipio = models.ForeignKey(Municipio, on_delete=models.SET_NULL, parent_link=True,  blank=True, null=True, default="")
     nacionalidade = models.ForeignKey(Pais, on_delete=models.CASCADE, parent_link=True, default=6)
     data_create= models.DateField(auto_now=True)
-    foto = models.FileField(upload_to='uploads/fotos/% Y/', blank=True, null=True)
+    foto = models.FileField(upload_to='foto/%Y/', blank=True, null=True, default="user.jpg")
     documento = models.ForeignKey(Documento_identificacao, on_delete=models.CASCADE, parent_link=True)
 
     def __str__(self):

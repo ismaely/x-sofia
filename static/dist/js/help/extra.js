@@ -21,10 +21,13 @@ function take_snapshot() {
 
 function saveSnap() {
     // Get base64 value from <img id='imageprev'> source
+    document.getElementById('fotoSalva').value = data_uri;
     var base64image = document.getElementById("imageprev").src;
 
-    Webcam.upload(base64image, "upload.php", function (code, text) {
+    /**
+     * Webcam.upload(base64image, "upload.php", function (code, text) {
         console.log("Save successfully");
         //console.log(text);
     });
+    **/
 }

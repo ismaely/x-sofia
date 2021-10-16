@@ -12,7 +12,27 @@ from pessoa.forms import Pessoa_Form
 from aluno.forms import Inscricao_Form
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-import json, sweetify
+import json, sweetify, random, base64
+from environment.env import DATA_HORA_ZONA 
+
+"""
+função que vai prepara a foto que vai ser salva
+"""
+def prepara_foto(request):
+    img = request.POST["foto"]
+    nome = str(DATA_HORA_ZONA).split('.')
+    foto = []
+    inicio = img.find(',')
+    imagem = img[inicio+1:]
+
+    with open("./media/foto/"+ str(nome[0]) + "_" + str(random.random()) + ".png", "wb") as fh:
+        fh.write(base64.b64decode(imagem))
+        foto = str(fh).split('=')
+        um = foto[1].replace(">", '')
+
+    um = um.replace("'", '')
+    um = um.split('media/')
+    return um[1]
 
 
 
@@ -20,15 +40,28 @@ def adicionarNovaInscricao(request):
     form = Pessoa_Form(request.POST or None)
     form2 = Inscricao_Form(request.POST or None)
     if request.method == 'POST':
-        if form.is_valid():
-            pessoa = form.save()
-            dados = form.save(commit=False)
+        if form.is_valid() and form2.is_valid():
+            pessoa = form.save(commit=False)
+            pessoa.municipio_id = form.cleaned_data.get('municipio')
+            print(form.cleaned_data.get("foto"))
+            if len(request.POST['foto']) > 0:
+                print("fotos--")
+                pessoa.foto = prepara_foto(request)
+                pessoa.save()
+            else:
+                pessoa.save()
+            dados = form2.save(commit=False)
             dados.pessoa_id = pessoa.id
-            sweetify.success(request, 'Dsciplina registrada com sucesso!....', button='Ok', timer='3100', persistent="Close")
+            dados.save()
+            sweetify.success(request, 'Disciplina registrada com sucesso!....', button='Ok', timer='3100', persistent="Close")
 
-            context = {}
+            context = {'dados':dados}
             return render (request, 'aluno/reciboInscricao.html', context)
 
     context = {'form':form,'form2':form2}
     return render (request, 'aluno/adicionarInscricao.html', context)
+
+
+
+
 
