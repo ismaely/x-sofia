@@ -37,9 +37,10 @@ def prepara_foto(request):
 
 
 def adicionarNovaInscricao(request):
-    form = Pessoa_Form(request.POST, request.FILES or None)
+    form = Pessoa_Form(request.POST or None)
     form2 = Inscricao_Form(request.POST or None)
     if request.method == 'POST':
+        form = Pessoa_Form(request.POST, request.FILES or None)
         if form.is_valid() and form2.is_valid():
             pessoa = form.save(commit=False)
             pessoa.municipio_id = form.cleaned_data.get('municipio')
@@ -55,7 +56,7 @@ def adicionarNovaInscricao(request):
             dados.save()
             sweetify.success(request, 'Disciplina registrada com sucesso!....', button='Ok', timer='3100', persistent="Close")
 
-            context = {'dados':dados}
+            context = {'dados': form.instance}
             return render (request, 'aluno/reciboInscricao.html', context)
 
     context = {'form':form,'form2':form2}
