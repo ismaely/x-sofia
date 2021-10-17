@@ -2,7 +2,7 @@
 @author [Gunza Ismael]
 @email [7ilip@gmail.com]
 @create date 2021-10-12 10:24:31
-@modify date 2021-10-17 01:58:11
+@modify date 2021-10-17 02:49:38
 @desc [description]
 -->
 {% extends 'home_base.html' %}{% block corpo %}{% load static %}
@@ -19,6 +19,16 @@
   <div class="card-body">
     <div class="row invoice-info">
       <div class="col-sm-4 invoice-col">
+        <div class="card">
+          <div class="card-body">
+            <div class="text-center">
+              <img src="/media/{{ pessoa.foto }}" class="rounded-circle" width="150" />
+              <h4 class="card-title mt-1"></h4>
+              <p class="card-subtitle"></p>
+            </div>
+          </div>
+        </div>
+
         <!--ola-->
       </div>
       <div class="col-sm-4 invoice-col">
@@ -42,28 +52,21 @@
     <div class="row">
       <div class="col-12 table-responsive">
         <table class="table table-striped">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
-              <td><b>Nome:</b> {{ pessoa.nome }}</td>
-              <td><b>Telefone:</b> {{ pessoa.telefone }}</td>
+              <td><b>Nome:</b> {{ pessoa.nome|safe|upper }}</td>
               <td><b>Nª Identificação:</b> {{ pessoa.ndi }}</td>
-              <td><b>Idade:</b></td>
             </tr>
             <tr>
               <td><b>Classe de Inscrição:</b> {{ inscricao.habilitacao_literaria.nome }}</td>
+              <td><b>Telefone:</b> {{ pessoa.telefone }}</td>
+            </tr>
+            <tr>
               <td><b>Periodo:</b> {{ inscricao.periodo.nome }}</td>
               {% if inscricao.habilitacao_literaria.id > 9 %}
-              <td><b>Curso:</b> {{ inscricao.curso.nome }}</td>
+              <td><b>Curso:</b> {{ inscricao.curso.nome|safe|upper }}</td>
               {% else %}
-              <td><b>Ensino:</b></td>
+              <td><b>Ensino de Base</b></td>
               {% endif %}
               <td></td>
             </tr>
@@ -102,16 +105,26 @@
         </div>
       </div>
     </div>
-    <div class="w-100 clearfix">
-      <span class="text-center text-sm-left d-md-inline-block">Sistema X-SOFIA v2.0</span>
-      <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">School <i class="fa fa-heart text-danger"></i> <a href="#" class="text-dark" target="_blank">Life</a></span>
+    <div class="row">
+      <div class="col-12">
+        <div id="visitfromworld" style="width: 100%; height: 300px"></div>
+        <div class="w-100 clearfix">
+          <span class="text-center text-sm-left d-md-inline-block">Sistema X-SOFIA v2.0</span>
+          <span class="float-none float-sm-right mt-1 mt-sm-0 text-center"
+            >School <i class="fa fa-heart text-danger"></i> <a href="#" class="text-dark" target="_blank">Life</a></span
+          >
+        </div>
+      </div>
     </div>
 
-    <!--<div class="row no-print">
+    <div class="row no-print">
       <div class="col-12">
+        <hr />
+        <p></p>
+        <!--
         <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px"><i class="fa fa-download"></i> Imprimir - PDF</button>
-      </div>
-    </div>-->
+      --></div>
+    </div>
   </div>
 </div>
 
