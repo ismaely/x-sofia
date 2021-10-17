@@ -13,6 +13,7 @@ function take_snapshot() {
         // display results in page
         document.getElementById("results").innerHTML = '<img id="imageprev" src="' + data_uri + '"/>';
         document.getElementById("result").innerHTML = '<img id="imageprev"  class="rounded-circle" src="' + data_uri + '"/>';
+        document.getElementById('fotoSalva').value = data_uri;
     });
 
     Webcam.reset();
@@ -21,7 +22,8 @@ function take_snapshot() {
 
 function saveSnap() {
     // Get base64 value from <img id='imageprev'> source
-    document.getElementById('fotoSalva').value = data_uri;
+    //console.log(data_uri)
+
     //var base64image = document.getElementById("imageprev").src;
 
     /**

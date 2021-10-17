@@ -2,7 +2,7 @@
 @author [Gunza Ismael]
 @email [7ilip@gmail.com]
 @create date 2021-10-12 10:24:31
-@modify date 2021-10-14 08:22:59
+@modify date 2021-10-17 01:58:11
 @desc [description]
 -->
 {% extends 'home_base.html' %}{% block corpo %}{% load static %}
@@ -14,7 +14,7 @@
 <p></p>
 <div class="card" id="reciboInscricao">
   <div class="card-header">
-    <h3 class="d-block w-100">Recibo de Inscrição <small class="float-right">Date: 12/11/2018</small></h3>
+    <h3 class="d-block w-100">Recibo de Inscrição <small class="float-right">Date: {{ inscricao.data_inscricao }}</small></h3>
   </div>
   <div class="card-body">
     <div class="row invoice-info">
@@ -33,9 +33,9 @@
       <div class="col-sm-4 invoice-col">
         <b></b><br />
         <br />
-        <b>Numero:</b> 4F3S8J<br />
-        <b>Estado:</b> 2/22/2014<br />
-        <b>Telefone:</b> 968-34567
+        <b>Numero de Inscrição:</b> 4F3S8J<br />
+        <b>Estado:</b> <br />
+        <b></b>
       </div>
     </div>
 
@@ -44,36 +44,28 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Product</th>
-              <th>Serial #</th>
-              <th>Description</th>
-              <th>Subtotal</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Call of Duty</td>
-              <td>455-981-221</td>
-              <td>El snort testosterone trophy driving gloves handsome</td>
-              <td>$64.50</td>
+              <td><b>Nome:</b> {{ pessoa.nome }}</td>
+              <td><b>Telefone:</b> {{ pessoa.telefone }}</td>
+              <td><b>Nª Identificação:</b> {{ pessoa.ndi }}</td>
+              <td><b>Idade:</b></td>
             </tr>
             <tr>
-              <td>Need for Speed IV</td>
-              <td>247-925-726</td>
-              <td>Wes Anderson umami biodiesel</td>
-              <td>$50.00</td>
-            </tr>
-            <tr>
-              <td>Monsters DVD</td>
-              <td>735-845-642</td>
-              <td>Terry Richardson helvetica tousled street art master</td>
-              <td>$10.70</td>
-            </tr>
-            <tr>
-              <td>Grown Ups Blue Ray</td>
-              <td>422-568-642</td>
-              <td>Tousled lomo letterpress</td>
-              <td>$25.99</td>
+              <td><b>Classe de Inscrição:</b> {{ inscricao.habilitacao_literaria.nome }}</td>
+              <td><b>Periodo:</b> {{ inscricao.periodo.nome }}</td>
+              {% if inscricao.habilitacao_literaria.id > 9 %}
+              <td><b>Curso:</b> {{ inscricao.curso.nome }}</td>
+              {% else %}
+              <td><b>Ensino:</b></td>
+              {% endif %}
+              <td></td>
             </tr>
           </tbody>
         </table>
@@ -85,7 +77,8 @@
         <p class="lead">Extra:</p>
 
         <div class="alert alert-secondary mt-20">
-          <!--obs-->
+          <b>E-mail da Instituição:</b> escola@gmail.com<br />
+          <b>Telefone:</b> <br />
         </div>
       </div>
       <div class="col-6">
@@ -96,10 +89,7 @@
               <th style="width: 50%">Subtotal:</th>
               <td>$250.30</td>
             </tr>
-            <tr>
-              <th>Tax (9.3%)</th>
-              <td>$10.34</td>
-            </tr>
+
             <tr>
               <th>Shipping:</th>
               <td>$5.80</td>
@@ -112,6 +102,11 @@
         </div>
       </div>
     </div>
+    <div class="w-100 clearfix">
+      <span class="text-center text-sm-left d-md-inline-block">Sistema X-SOFIA v2.0</span>
+      <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">School <i class="fa fa-heart text-danger"></i> <a href="#" class="text-dark" target="_blank">Life</a></span>
+    </div>
+
     <!--<div class="row no-print">
       <div class="col-12">
         <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px"><i class="fa fa-download"></i> Imprimir - PDF</button>

@@ -25,7 +25,7 @@ def prepara_foto(request):
     inicio = img.find(',')
     imagem = img[inicio+1:]
 
-    with open("./media/foto/"+ str(nome[0]) + "_" + str(random.random()) + ".png", "wb") as fh:
+    with open("./media/fotos/"+ str(nome[0]) + "_" + str(random.random()) + ".png", "wb") as fh:
         fh.write(base64.b64decode(imagem))
         foto = str(fh).split('=')
         um = foto[1].replace(">", '')
@@ -44,19 +44,18 @@ def adicionarNovaInscricao(request):
         if form.is_valid() and form2.is_valid():
             pessoa = form.save(commit=False)
             pessoa.municipio_id = form.cleaned_data.get('municipio')
-            print(form.cleaned_data.get("foto"))
             if len(request.POST['foto']) > 0:
-                print("fotos--")
                 pessoa.foto = prepara_foto(request)
                 pessoa.save()
             else:
+                pessoa.foto ='user.jpg'
                 pessoa.save()
             dados = form2.save(commit=False)
             dados.pessoa_id = pessoa.id
             dados.save()
             sweetify.success(request, 'Disciplina registrada com sucesso!....', button='Ok', timer='3100', persistent="Close")
 
-            context = {'dados': form.instance}
+            context = {'pessoa': form.instance, 'inscricao': form2.instance}
             return render (request, 'aluno/reciboInscricao.html', context)
 
     context = {'form':form,'form2':form2}
