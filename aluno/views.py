@@ -62,6 +62,7 @@ def adicionarNovaInscricao(request):
     return render (request, 'aluno/adicionarInscricao.html', context)
 
 
-
+def novaMaricula(request):
+    pass
 
 
