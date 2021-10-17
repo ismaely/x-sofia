@@ -1,1 +1,1 @@
-web: gunicorn Sofia.wsgi --log-file -
+web: gunicorn Sofia.wsgi:apllication --log-file -
