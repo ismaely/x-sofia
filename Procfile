@@ -1,0 +1,1 @@
+web: gunicorn Sofia.wsgi --log-file -
