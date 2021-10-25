@@ -137,8 +137,11 @@ SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (BASE_DIR, 'static')
-#STATIC_ROOT = '/var/www/app/env/SOFIL_RH/static/'
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+else:
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
+
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
