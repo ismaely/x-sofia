@@ -59,7 +59,7 @@ class Pais(models.Model):
         return "%s" % (self.nome)
 
 
-"""class Municipio(models.Model):
+class Municipio(models.Model):
     provincia = models.ForeignKey(Provincia, on_delete=models.CASCADE, parent_link=True)
     nome = models.CharField(max_length=100)
     sigla = models.CharField(max_length=60, blank=True, null=True, default=" ")
@@ -67,7 +67,7 @@ class Pais(models.Model):
     def __str__(self):
         return "%s" % (self.nome)
 
-"""
+
 
 class Estado_Civil(models.Model):
     nome = models.CharField(max_length=50)

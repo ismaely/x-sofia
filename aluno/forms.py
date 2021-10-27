@@ -1,13 +1,13 @@
 from django import forms
 from django.db.models import Q
 from django.forms import ModelForm
-#from pessoa.models import Pessoa
-#from configuracao.models import Curso, Periodo
-#from aluno.models import Aluno, Inscricao
+from pessoa.models import Pessoa
+from configuracao.models import Curso, Periodo
+from aluno.models import Aluno, Inscricao
 import math
 
 
-"""class Inscricao_Form(ModelForm):
+class Inscricao_Form(ModelForm):
     ndi = forms.CharField(max_length=14,required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     instituicao_origem = forms.CharField(max_length=100,required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     ano_conclusao = forms.CharField(max_length=4,required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -21,4 +21,14 @@ import math
             'habilitacao_literaria': forms.Select(attrs={'class': 'form-control ajax_classeFrequencia'}),
             'data_inscricao': forms.DateInput( attrs={'class': 'form-control','type': 'date'}),
         }
-"""
+
+    """def clean_nota_final(self):
+        nota_final = self.cleaned_data.get('nota_final')
+        if int(nota_final) > 9 and int(nota_final) <= 20:
+            return nota_final
+        elif int(nota_final) > 20:
+            nota_final = (int(nota_final) * 20)/100
+            return math.trunc(nota_final)
+        else:
+            raise forms.ValidationError("A media final não é valida")
+    """

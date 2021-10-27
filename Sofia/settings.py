@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'Sofia.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'replica': {
+    'default2': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'sige_sofia',
         'USER': 'postgres',
