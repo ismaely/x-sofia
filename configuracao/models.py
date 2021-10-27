@@ -6,6 +6,7 @@
  * @desc [description]
  */
 """
+
 from django.db import models
 import uuid
 
