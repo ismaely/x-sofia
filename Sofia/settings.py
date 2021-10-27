@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v&d7j0-d_lm5047_2-%0(3$3s_t-g9fk$c)7#09(1_xk*8x!#m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'x-sofia.herokuapp.com']
 
@@ -40,16 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_heroku',
+    'whitenoise.runserver_nostatic',
     'sweetify',
     'environment',
     'configuracao',
     'instituicao',
     'validate',
     'curso',
-    'disciplina',
     'pessoa',
     'aluno',
     'docente',
+    'disciplina',
     'utilizador',
 ]
 
@@ -90,6 +91,16 @@ WSGI_APPLICATION = 'Sofia.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sige_sofia',
+        'USER': 'postgres',
+        'PASSWORD': '0203',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        
+    
+    },
+    'replica': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sige_sofia',
         'USER': 'root',

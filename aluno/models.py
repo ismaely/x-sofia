@@ -12,7 +12,7 @@ from pessoa.models import Pessoa
 from configuracao.models import Curso, Resultado_Inscricao, Periodo, Grau_academico
 
 # Create your models here.
-
+"""
 class Aluno(models.Model):
     pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE, parent_link=True)
     #numero_estudante= models.CharField(max_length=30, blank=True, null=True, default="NULL")
@@ -25,9 +25,10 @@ class Aluno(models.Model):
         return self.id
     class Meta:
         order_with_respect_to = 'pessoa'
+"""
 
         
-class Inscricao(models.Model):
+"""class Inscricao(models.Model):
     pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE, parent_link=True)
     curso = models.ForeignKey(Curso, on_delete=models.DO_NOTHING, blank=True, null=True, parent_link=True)
     periodo = models.ForeignKey(Periodo, on_delete=models.CASCADE, parent_link=True)
@@ -43,9 +44,9 @@ class Inscricao(models.Model):
 
     def __str__ (self):
         return self.id
+"""
 
-
-class InscricaoResultado(models.Model):
+"""class InscricaoResultado(models.Model):
     inscricao = models.ForeignKey(Inscricao, on_delete=models.CASCADE, parent_link=True)
     resultado = models.ForeignKey(Resultado_Inscricao, on_delete=models.DO_NOTHING, blank=True, null=True, parent_link=True)
     descricao = models.CharField(max_length=3, blank=True, null=True, default="")
@@ -56,3 +57,4 @@ class InscricaoResultado(models.Model):
 
     def __str__ (self):
         return self.id
+"""
