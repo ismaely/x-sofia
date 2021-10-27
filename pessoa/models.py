@@ -8,11 +8,12 @@
  """
 
 from django.db import models
-from configuracao.models import Pais, Provincia, Municipio, Genero, Estado_Civil, Documento_identificacao
+from configuracao.models import Pais, Provincia, Genero, Estado_Civil, Documento_identificacao
 
 # Create your models here. unique=True
 """"""
-class Pessoa(models.Model):
+"""class Pessoa(models.Model):
+    pass
     nome = models.CharField(max_length=200,)
     nome_pai = models.CharField(max_length=200, blank=True, null=True, default="")
     nome_mae = models.CharField(max_length=200, blank=True, null=True, default="")
@@ -32,3 +33,4 @@ class Pessoa(models.Model):
 
     def __str__(self):
         return self.id
+"""

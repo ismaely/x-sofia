@@ -8,7 +8,7 @@
  """
 
 from django.db import models
-from pessoa.models import Pessoa
+#from pessoa.models import Pessoa
 from configuracao.models import Curso, Resultado_Inscricao, Periodo, Grau_academico
 
 # Create your models here.

@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpRequest, Http404, HttpResponse
 import random, json
-from configuracao.models import Municipio
+#from configuracao.models import Municipio
 # Create your views here.
 
 
 def retorna_municipio(request):
+    pass
     try:
         dados = dict()
         if request.method == 'POST':

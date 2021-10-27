@@ -1,12 +1,13 @@
 from django import forms
 from django.db.models import Q
 from django.forms import ModelForm
-from pessoa.models import Pessoa
+#rom pessoa.models import Pessoa
 from configuracao.models import Documento_identificacao
 
 
 
 class Pessoa_Form(ModelForm):
+    pass
     nome = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control '}))
     nome_pai = forms.CharField(max_length=100, required=False,  widget=forms.TextInput(attrs={'class': 'form-control '}))
     nome_mae = forms.CharField(max_length=100, required=False, widget=forms.TextInput(attrs={ 'class': 'form-control '}))

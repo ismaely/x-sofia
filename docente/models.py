@@ -1,5 +1,5 @@
 from django.db import models
-from pessoa.models import Pessoa
+#from pessoa.models import Pessoa
 #from disciplina.models import Disciplina
 
 # Create your models here.
