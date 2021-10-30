@@ -32,3 +32,13 @@ class Inscricao_Form(ModelForm):
         else:
             raise forms.ValidationError("A media final não é valida")
     """
+
+
+class Listar_inscricao_Form(forms.Form):
+    classe = forms.CharField(widget=forms.Select(choices = '' , attrs={'class': 'form-control'}))
+    genero = forms.CharField(required=False, widget=forms.Select(choices='', attrs={'class': 'form-control'}))
+    periodo = forms.CharField(required=False, widget=forms.Select(choices='', attrs={'class': 'form-control ajax_ano'}))
+    curso = forms.CharField(required=False, widget=forms.Select(choices='', attrs={'class': 'form-control ajax_curso'}))
+    dataInscricao = forms.CharField(required=False, max_length=13, widget=forms.TextInput(attrs={'type': 'date', 'class': 'form-control'}))
+    dataFim = forms.CharField(max_length=13, required=False, widget=forms.TextInput(attrs={'type': 'date','class': 'form-control'}))
+

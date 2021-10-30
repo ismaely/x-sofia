@@ -7,9 +7,9 @@
  */
 """
 from django.shortcuts import render
-#from aluno.models import Aluno, Inscricao
-#from pessoa.forms import Pessoa_Form
-#from aluno.forms import Inscricao_Form
+from aluno.models import Aluno, Inscricao
+from pessoa.forms import Pessoa_Form
+from aluno.forms import Inscricao_Form
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import json, sweetify, random, base64
@@ -37,7 +37,6 @@ def prepara_foto(request):
 
 
 def adicionarNovaInscricao(request):
-    pass
     form = Pessoa_Form(request.POST or None)
     form2 = Inscricao_Form(request.POST or None)
     if request.method == 'POST':
@@ -67,3 +66,5 @@ def novaMaricula(request):
     pass
 
 
+def listaInscricao(request):
+    pass
